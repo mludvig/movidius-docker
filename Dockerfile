@@ -1,16 +1,13 @@
 # Based on https://github.com/lisaong/stackup-workshops/tree/master/ai-edge/docker/movidius/ubuntu
 
 FROM ubuntu:16.04
+
+# Proxy configuration
 ARG http_proxy
-
 ARG https_proxy
-
 ENV http_proxy ${http_proxy}
-
 ENV https_proxy ${https_proxy}
-
 RUN echo $https_proxy
-
 RUN echo $http_proxy
 
 ARG USERNAME=movidius
