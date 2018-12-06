@@ -55,10 +55,5 @@ WORKDIR $WORKSPACE
 RUN git clone https://github.com/tensorflow/tensorflow.git
 RUN git clone https://github.com/tensorflow/models.git
 
-WORKDIR $WORKSPACE/ncappzoo/tensorflow/mobilenets/
 ENV TF_SRC_PATH $WORKSPACE/tensorflow
 ENV TF_MODELS_PATH $WORKSPACE/models
-RUN make
-
-WORKDIR $WORKSPACE/ncappzoo/apps/ssd-object-detector/
-RUN make
