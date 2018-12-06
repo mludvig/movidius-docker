@@ -22,19 +22,15 @@ ARG WORKSPACE=/home/$USERNAME
 #RUN rm /var/lib/apt/lists/* -vf
 
 RUN apt-get update \
-    && apt-get upgrade \
+    && apt-get upgrade -y \
     && apt-get install -y \
+      lsb-release \
       build-essential \
       git \
       sudo \
       udev \
       usbutils \
       wget \
-    && apt-get clean all
-
-RUN apt-get update \
-    && apt-get install -y \
-      lsb-release \
     && apt-get clean all
 
 RUN useradd -c "Movidius User" -m $USERNAME
